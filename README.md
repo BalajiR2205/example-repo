@@ -1,34 +1,41 @@
 #Example repository
 
-THis is a sample repo, hello world!
 
-This is a second change following up.
-
-my $transactions = [
-    { customer => 'Alice', product => 'Laptop',   qty => 1, price => 1000 },
-    { customer => 'Alice', product => 'Mouse',    qty => 2, price => 20   },
-    { customer => 'Alice', product => 'Laptop',   qty => 1, price => 1000 },
-    { customer => 'Bob',   product => 'Keyboard', qty => 1, price => 60   },
-    { customer => 'Alice', product => 'Mouse',    qty => 1, price => 25   },
-    { customer => 'Bob',   product => 'Keyboard', qty => 2, price => 55   },
-];
-
-
-%output = (
-    'Alice' => {
-        'Laptop' => {
-            total_qty   => 2,
-            total_spent => 2000
-        },
-        'Mouse' => {
-            total_qty   => 3,
-            total_spent => 65  # 2*20 + 1*25
-        },
-    },
-    'Bob' => {
-        'Keyboard' => {
-            total_qty   => 3,
-            total_spent => 170  # 1*60 + 2*55
-        },
-    },
+my %departments = (
+    'HR' => [ 'Alice', 'Bob' ],
+    'IT' => [ 'Charlie', 'David' ],
+    'Finance' => [ 'Eve' ],
 );
+
+my %salaries = (
+    'Alice'   => { base => 50000, bonus => 5000 },
+    'Bob'     => { base => 55000, bonus => 6000 },
+    'Charlie' => { base => 70000, bonus => 8000 },
+    'David'   => { base => 68000, bonus => 7000 },
+    'Eve'     => { base => 62000, bonus => 6500 },
+);
+
+#output
+
+[
+    {
+        department => 'HR',
+        employees  => [
+            { name => 'Alice', total_salary => 55000 },
+            { name => 'Bob',   total_salary => 61000 },
+        ]
+    },
+    {
+        department => 'IT',
+        employees  => [
+            { name => 'Charlie', total_salary => 78000 },
+            { name => 'David',   total_salary => 75000 },
+        ]
+    },
+    {
+        department => 'Finance',
+        employees  => [
+            { name => 'Eve', total_salary => 68500 },
+        ]
+    }
+]
