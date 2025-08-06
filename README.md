@@ -1,41 +1,36 @@
 #Example repository
 
-
-my %departments = (
-    'HR' => [ 'Alice', 'Bob' ],
-    'IT' => [ 'Charlie', 'David' ],
-    'Finance' => [ 'Eve' ],
+my %tasks = (
+    'Frontend' => {
+        'High'   => [ 'Fix login bug', 'Improve UI speed' ],
+        'Medium' => [ 'Add tooltip to buttons' ],
+    },
+    'Backend' => {
+        'High'   => [ 'Optimize DB queries' ],
+        'Low'    => [ 'Refactor config loader' ],
+    },
+    'DevOps' => {
+        'Medium' => [ 'Add monitoring alerts', 'Update Dockerfile' ],
+        'High'   => [ 'Migrate to new CI pipeline' ],
+    },
 );
 
-my %salaries = (
-    'Alice'   => { base => 50000, bonus => 5000 },
-    'Bob'     => { base => 55000, bonus => 6000 },
-    'Charlie' => { base => 70000, bonus => 8000 },
-    'David'   => { base => 68000, bonus => 7000 },
-    'Eve'     => { base => 62000, bonus => 6500 },
-);
-
-#output
+Output:
 
 [
     {
-        department => 'HR',
-        employees  => [
-            { name => 'Alice', total_salary => 55000 },
-            { name => 'Bob',   total_salary => 61000 },
-        ]
+        team               => 'DevOps',
+        total_tasks        => 3,
+        high_priority_tasks => 1,
     },
     {
-        department => 'IT',
-        employees  => [
-            { name => 'Charlie', total_salary => 78000 },
-            { name => 'David',   total_salary => 75000 },
-        ]
+        team               => 'Frontend',
+        total_tasks        => 3,
+        high_priority_tasks => 2,
     },
     {
-        department => 'Finance',
-        employees  => [
-            { name => 'Eve', total_salary => 68500 },
-        ]
-    }
+        team               => 'Backend',
+        total_tasks        => 2,
+        high_priority_tasks => 1,
+    },
 ]
