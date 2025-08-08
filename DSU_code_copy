@@ -1,0 +1,47 @@
+my $employees = [
+    { id => 1, name => 'Alice',   dept => 'IT' },
+    { id => 2, name => 'Bob',     dept => 'HR' },
+    { id => 3, name => 'Charlie', dept => 'IT' },
+    { id => 4, name => 'David',   dept => 'Finance' },
+    { id => 5, name => 'Eve',     dept => 'HR' },
+];
+
+my %projects = (
+    'IT' => [
+        { project => 'Intranet',    assignments => [ { empid => 1, hours => 10 }, { empid => 3, hours => 15 } ] },
+        { project => 'CloudInfra',  assignments => [ { empid => 1, hours => 5 } ] },
+    ],
+    'HR' => [
+        { project => 'HiringDrive', assignments => [ { empid => 2, hours => 8 }, { empid => 5, hours => 4 } ] },
+    ],
+    'Finance' => [
+        { project => 'Audit2025',   assignments => [ { empid => 4, hours => 12 } ] },
+    ],
+);
+
+
+
+Output:
+
+[
+    {
+        empid      => 1,
+        name       => 'Alice',
+        dept       => 'IT',
+        total_hours => 15,
+        projects   => [
+            { name => 'Intranet',   hours => 10 },
+            { name => 'CloudInfra', hours => 5 },
+        ]
+    },
+    {
+        empid      => 2,
+        name       => 'Bob',
+        dept       => 'HR',
+        total_hours => 8,
+        projects   => [
+            { name => 'HiringDrive', hours => 8 },
+        ]
+    },
+    ...
+]
