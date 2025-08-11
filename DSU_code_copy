@@ -45,3 +45,16 @@ Output:
     },
     ...
 ]
+
+Add a final summary hash (HoH) at the end showing total hours spent per department, like:
+
+%summary = (
+    'IT'      => 30,
+    'HR'      => 12,
+    'Finance' => 12,
+);
+
+
+---
+
+This combines everything you’ve practiced: AoH, HoAoH, nested loops, aggregation, filtering, and structure building.
