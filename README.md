@@ -1,36 +1,16 @@
-#Example repository
+pairs = [
+    ("sub add { my ($a,$b)=@_; return $a+$b; }",
+     "def add(a, b): return a + b"),
 
-my %tasks = (
-    'Frontend' => {
-        'High'   => [ 'Fix login bug', 'Improve UI speed' ],
-        'Medium' => [ 'Add tooltip to buttons' ],
-    },
-    'Backend' => {
-        'High'   => [ 'Optimize DB queries' ],
-        'Low'    => [ 'Refactor config loader' ],
-    },
-    'DevOps' => {
-        'Medium' => [ 'Add monitoring alerts', 'Update Dockerfile' ],
-        'High'   => [ 'Migrate to new CI pipeline' ],
-    },
-);
+    ("sub subtract { my ($a,$b)=@_; return $a-$b; }",
+     "def subtract(a, b): return a - b"),
 
-Output:
+    ("sub multiply { my ($a,$b)=@_; return $a*$b; }",
+     "def multiply(a, b): return a * b"),
 
-[
-    {
-        team               => 'DevOps',
-        total_tasks        => 3,
-        high_priority_tasks => 1,
-    },
-    {
-        team               => 'Frontend',
-        total_tasks        => 3,
-        high_priority_tasks => 2,
-    },
-    {
-        team               => 'Backend',
-        total_tasks        => 2,
-        high_priority_tasks => 1,
-    },
+    ("sub divide { my ($a,$b)=@_; return $a/$b; }",
+     "def divide(a, b): return a / b"),
+
+    ("sub pow { my ($a,$b)=@_; return $a**$b; }",
+     "def pow(a, b): return a ** b"),
 ]
